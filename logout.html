@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="expires" content="-1">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+		<title>Status - Links Wireless</title>
+		<link rel="icon" type="image/png" href="assets/icon.png"/>
+		<link rel="stylesheet" type="text/css" href="assets/main.css">
+	</head>
+	<body>
+		
+	<header>
+		<h1>Links Wireless</h1>
+	</header>
+	<script>
+		function openLogin() {
+		if (window.name != 'hotspot_logout') return true;
+		open('$(link-login)', '_blank', '');
+		window.close();
+		return false;
+		}
+	</script>
+		<main>
+			<section class="detail-sesi logout">
+				<div class="card">
+					<div class="title">Au revoir!</div>
+					<div class="body">
+							<table>
+								<tr>
+									<th>Nom</th>
+									<td>$(username)</td>
+								</tr>
+								<tr>
+									<th>Adresse IP</th>
+									<td>$(ip)</td>
+								</tr>
+								<tr>
+									<th>Adresse MAC</th>
+									<td>$(mac)</td>
+								</tr>
+								<tr>
+									<th>Upload</th>
+									<td>$(bytes-out-nice)</td>
+								</tr>
+								<tr>
+									<th>Download</th>
+									<td>$(bytes-in-nice)</td>
+								</tr>
+								<tr>
+									<th>Temps d'activiter</th>
+									<td>$(uptime)</td>
+								</tr>
+								$(if session-time-left)
+								<tr>
+									<th>Temps restant</th>
+									<td>$(session-time-left)</td>
+								</tr>
+								$(endif)
+							</table>
+					</div>
+					<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+					<input type="submit" value="connexion" class="btn">
+					</form>
+				</div>
+			</section>
+			<section class="info">
+				<div class="card">
+					<div class="title">Info</div>
+					<div class="body">
+						<p>Contactez nous</p>
+						<a href="https://api.whatsapp.com/send?phone=+22896747253" class="btn">96747253</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>Designed by <a href="https://">Merek</a></p>
+		</footer>
+	</body>
+</html>
