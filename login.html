@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+	<title>Links Wireless</title>
+	<link rel="stylesheet" type="text/css" href="assets/main.css">
+	<link rel="stylesheet" href="assets/splide.min.css">
+</head>
+
+<body>
+
+	<header>
+		<h1>Links Wireless</h1>
+	</header>
+	<main>
+		<section class="slider">
+			<div id="image-slider" class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">
+							<a href="#ad1"><img src="assets/AF1.png"></a>
+						</li>
+						<li class="splide__slide">
+							<a href="#ad2"><img src="assets/links.png"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="dst" value="$(link-orig)">
+			<input type="hidden" name="popup" value="true">
+			<input type="hidden" name="username">
+			<input type="hidden" name="password">
+		</form>
+		<script src="/md5.js"></script>
+		<script>
+			function doLogin() {
+				document.sendin.username.value = document.login.username.value;
+				document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+				document.sendin.submit();
+				return false;
+			}
+		</script>
+		$(endif)
+		</div>
+		</div>
+		$(if error)
+		<section class="alert">
+			<p>
+				Une erreur est survenue ! <br>
+				l'identifiant ou le mot de passe sont incorrect!
+			</p>
+		</section>
+		$(endif)
+		<section class="form">
+			<div class="toggler">
+				<button id="btn-member" class="btn inactive">Compte</button>
+			</div>
+			<div class="card">
+				<div class="title">Entrez vos identifiants</div>
+				<div class="body">
+					<form name="login" action="$(link-login-only)" method="post" $(if chap-id)
+						onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+						<label for="username" id="label-username">Username</label>
+						<input type="text" autofocus name="username" id="username">
+						<label for="password" id="label-password">Password</label>
+						<input type="password" name="password" id="password">
+						<input type="submit" value="connexion" class="btn" id="login">
+					</form>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="card">
+				<div class="title"></div>
+				<div class="body">
+					<table>
+						<thead>
+							<tr>
+								<th>Tarifs</th>
+								<th>Temps</th>
+								<th>Validite</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="prix">100F</td>
+								<td>8H</td>
+								<td class="val">1jour</td>
+							</tr>
+							<tr>
+								<td class="prix">200F</td>
+								<td>24H</td>
+								<td class="val">2jours</td>
+							</tr>
+							<tr>
+								<td class="prix">800F</td>
+								<td>1semaine</td>
+								<td class="val">7jours</td>
+							</tr>
+							<tr>
+								<td class="prix">2000F</td>
+								<td>1mois</td>
+								<td class="val">31jours</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="info">
+			<div class="card">
+				<div class="title">Info</div>
+				<div class="body">
+					<p>Contactez nous</p>
+					<a href="https://api.whatsapp.com/send?phone=+22896747253" class="btn">96747253</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>Designed by <a href="https://">Merek</a></p>
+	</footer>
+	<script src="assets/main.js"></script>
+	<script src="assets/splide.min.js"></script>
+	<script src="assets/splide.custom.js"></script>
+</body>
+
+</html>
